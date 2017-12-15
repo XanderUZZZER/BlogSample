@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BlogSample.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,13 @@ namespace BlogSample.Controllers
 {
     public class HomeController : Controller
     {
+        BlogContext db = new BlogContext();
+
         public ActionResult Index()
         {
+            IEnumerable<Article> articles = db.Articles;
+            ViewBag.Articles = articles;
+
             return View();
         }
 
