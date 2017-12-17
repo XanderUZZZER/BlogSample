@@ -1,20 +1,35 @@
 ﻿body {
-    
+    margin: 0;
+    padding: 0;
 }
-header, footer{
-    height: 40px;
+
+header, footer {
+    height: 30px;
     background-color: deepskyblue;
 }
-.main-content{
+
+.content {
     width: 80%;
     margin: 0 auto;
+    clear: both;
 }
-.sidebar{
+
+.sidebar {
     float: right;
+    border: 2px solid red;
 }
-.article {
-    border: 2px solid black;
+
+.main-content {
+    float: left;
+    width: 50%;
+    border: 2px solid red;
 }
-article{
-    background-color: lightseagreen;
+
+.content > article {
+        border: 2px solid black;
+        background-color: yellow;
+    }
+
+.clearfix {
+    clear: both;
 }
