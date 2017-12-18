@@ -9,8 +9,13 @@ namespace BlogSample.Models
     {
         public int Id { get; private set; }
         public string Name { get; private set; }
-        public Sex Sex { get; private set; }
-        public DateTime BirthDay { get; private set; }
+        public Sex? Sex { get; private set; }
+        public DateTime? BirthDay { get; private set; }
         public List<Skill> Skills { get; private set; }
+
+        public Person(string name)
+        {
+            this.Name = name;
+        }
     }
 }

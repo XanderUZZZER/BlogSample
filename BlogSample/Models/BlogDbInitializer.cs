@@ -30,7 +30,7 @@ namespace BlogSample.Models
             });
             db.Articles.Add(new Article
             {
-                Title = "Article 2",
+                Title = "Article 3",
                 Date = DateTime.Now,
                 Text = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                          Etiam vehicula rhoncus velit non mattis. Donec nec magna ac enim hendrerit sagittis congue sed quam.

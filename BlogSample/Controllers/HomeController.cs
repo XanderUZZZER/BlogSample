@@ -14,7 +14,9 @@ namespace BlogSample.Controllers
         public ActionResult Index()
         {
             IEnumerable<Article> articles = db.Articles;
+            IEnumerable<Person> persons = db.Persons;
             ViewBag.Articles = articles;
+            ViewBag.Persons = persons;
 
             return View();
         }

@@ -7,5 +7,12 @@ namespace BlogSample.Models
 {
     public class Feedback : Post
     {
+        public Feedback()
+        {
+
+        }
+        public Feedback(int personId, string text) : base(personId, text)
+        {
+        }
     }
 }

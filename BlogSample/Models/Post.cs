@@ -11,5 +11,16 @@ namespace BlogSample.Models
         public int PersonId { get; set; }
         public DateTime? Date { get; set; }
         public string Text { get; set; }
+
+        public Post()
+        {
+
+        }
+        public Post(int personId, string text)
+        {
+            this.Text = text;
+            this.PersonId = personId;
+            Date = DateTime.Now;
+        }
     }
 }

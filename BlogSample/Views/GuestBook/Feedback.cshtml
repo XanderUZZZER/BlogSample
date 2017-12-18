@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Feedback";
+}
+
+<h2>Feedbacks</h2>
+@if (ViewBag.Feedbacks != null)
+{
+    foreach (var feedback in ViewBag.Feedbacks)
+    {
+        <div class="post">
+            <p>Posted: by @feedback.PersonId @feedback.Date</p>
+            <article>@feedback.Text</article>
+        </div>
+    }
+
+}
+<form action="" method="post">
+    <p>Type your name and feedback:</p>
+    <input type="text" name="name" placeholder="Name">
+    <textarea name="text" id="comment-field" rows="5" placeholder="Your feedback"></textarea>
+    <input type="submit" value="Add feedback">
+</form>

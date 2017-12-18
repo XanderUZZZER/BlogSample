@@ -9,6 +9,13 @@ namespace BlogSample.Models
     public class BlogContext : DbContext
     {
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
         public DbSet<Person> Persons { get; set; }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    Database.SetInitializer<BlogContext>(null);
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }

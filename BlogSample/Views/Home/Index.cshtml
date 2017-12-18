@@ -4,14 +4,12 @@
 @{
     ViewBag.Title = "Blog";
 }
-<div>
-    <h3>Articles</h3>
-    @foreach (var article in ViewBag.Articles)
-    {
-        <div>
-            <h4>@article.Title</h4>
-            <article>@article.Text</article>
-            <p>Posted: @article.Date</p>
-        </div>
-    }
-</div>
+<h2>Articles</h2>
+@foreach(var post in ViewBag.Articles)
+{
+    <div class="post">
+        <h3>@post.Title</h3>
+        <article>@post.Text</article>
+        <p>Posted: by @post.PersonId @post.Date</p>
+    </div>
+}
