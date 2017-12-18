@@ -1,6 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    ViewBag.Title = "Blog";
+}
 <div>
     <h3>Articles</h3>
     @foreach (var article in ViewBag.Articles)
