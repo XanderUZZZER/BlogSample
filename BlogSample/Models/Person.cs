@@ -7,11 +7,16 @@ namespace BlogSample.Models
 {
     public class Person
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public Sex? Sex { get; private set; }
-        public DateTime? BirthDay { get; private set; }
-        public List<Skill> Skills { get; private set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Sex? Sex { get; set; }
+        public DateTime? BirthDay { get; set; }
+        public virtual ICollection<Skill> Skills { get; set; }
+
+        public Person()
+        {
+            Skills = new List<Skill>();
+        }
 
         public Person(string name)
         {

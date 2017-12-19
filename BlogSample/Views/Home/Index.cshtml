@@ -10,6 +10,19 @@
     <div class="post">
         <h3>@post.Title</h3>
         <article>@post.Text</article>
-        <p>Posted: by @post.PersonId @post.Date</p>
+        @foreach (var person in ViewBag.Persons)
+        {
+            if (person.Id == post.PersonId)
+            {
+                <p>Posted: by @person.Name @post.Date</p>
+            }
+        }
     </div>
 }
+<form action="/Home/Index" method="post">
+    <p>Type your name and article:</p>
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="title" placeholder="Article title">
+    <textarea name="article" id="article-field" rows="5" placeholder="Your article"></textarea>
+    <input type="submit" value="Add article">
+</form>

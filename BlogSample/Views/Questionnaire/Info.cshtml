@@ -1,0 +1,21 @@
+﻿@using BlogSample.Helpers
+@using BlogSample.Models
+@{
+    ViewBag.Title = "Info";
+}
+
+<h2>Info</h2>
+
+<form action="/Questionnaire/Info" method="post">
+    <p>Your name:</p>
+    <input type="text" name="name" placeholder="Name">
+
+    <p>Your sex:</p>
+    <p><input type="radio" name="sex" value="male" checked>male</p>
+    <p><input type="radio" name="sex" value="female">female</p>
+    
+    <p>Your skills:</p>
+    @Html.CreateCheckedList((IEnumerable<Skill>)ViewBag.Skills, "skill")
+
+    <p><input type="submit" value="Update info"></p>
+</form> 

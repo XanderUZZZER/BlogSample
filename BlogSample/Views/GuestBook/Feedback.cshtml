@@ -9,15 +9,20 @@
     foreach (var feedback in ViewBag.Feedbacks)
     {
         <div class="post">
-            <p>Posted: by @feedback.PersonId @feedback.Date</p>
+            @foreach(var person in ViewBag.Persons)
+            {
+                if (person.Id == feedback.PersonId)
+                {
+                    <p>Posted: by @person.Name @feedback.Date</p>
+                }
+            }
             <article>@feedback.Text</article>
         </div>
     }
-
 }
-<form action="" method="post">
+<form action="/GuestBook/Feedback" method="post">
     <p>Type your name and feedback:</p>
     <input type="text" name="name" placeholder="Name">
-    <textarea name="text" id="comment-field" rows="5" placeholder="Your feedback"></textarea>
+    <textarea name="feedback" id="comment-field" rows="5" placeholder="Your feedback"></textarea>
     <input type="submit" value="Add feedback">
 </form>

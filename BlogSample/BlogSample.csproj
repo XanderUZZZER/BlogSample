@@ -165,15 +165,16 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\BlogContext.cs" />
     <Compile Include="Models\BlogDbInitializer.cs" />
+    <Compile Include="Helpers\BlogHelpers.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Sex.cs" />
     <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\SkillItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\BlogStyle.css" />
     <Content Include="Content\Imgs\Logo.jpg" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -205,10 +206,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\GuestBook\Feedback.cshtml" />
+    <Content Include="Views\Questionnaire\Info.cshtml" />
+    <Content Include="Views\Questionnaire\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
