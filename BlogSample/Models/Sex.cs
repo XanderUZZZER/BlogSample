@@ -7,7 +7,7 @@ namespace BlogSample.Models
 {
     public enum Sex
     {
-        Male,
-        Female
+        male,
+        female
     }
 }

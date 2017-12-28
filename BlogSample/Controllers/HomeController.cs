@@ -11,6 +11,7 @@ namespace BlogSample.Controllers
     {
         BlogContext db = new BlogContext();
 
+        [HttpGet]
         public ActionResult Index()
         {
             IEnumerable<Article> articles = db.Articles;
@@ -21,18 +22,17 @@ namespace BlogSample.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(string name, string title, string article)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (!db.Persons.Select(p => p.Name).Contains(name))
+            {
+                db.Persons.Add(new Person(name));
+                db.SaveChanges();
+            }
+            db.Articles.Add(new Article(db.Persons.Where(p => p.Name == name).Select(p => p.Id).First(), title, article));
+            db.SaveChanges();
+            return Index();
         }
     }
 }

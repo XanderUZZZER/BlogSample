@@ -17,7 +17,7 @@ namespace BlogSample.Controllers
             IEnumerable<Feedback> feedbacks = db.Feedbacks;
             IEnumerable<Person> persons = db.Persons;
             ViewBag.Feedbacks = feedbacks;
-            ViewBag.Persons = persons;
+            ViewBag.Persons = persons;            
             return View();
         }
 
@@ -29,9 +29,9 @@ namespace BlogSample.Controllers
                 db.Persons.Add(new Person(name));
                 db.SaveChanges();
             }
-            db.Feedbacks.Add(new Feedback(db.Persons.Select(p => p.Id).First(), feedback));
+            db.Feedbacks.Add(new Feedback(db.Persons.Where(p => p.Name == name).Select(p => p.Id).First(), feedback));
             db.SaveChanges();
-            return View();
+            return Feedback();
         }
     }
 }
